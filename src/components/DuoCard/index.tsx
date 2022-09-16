@@ -16,7 +16,7 @@ export interface DuoCardProps {
 
 interface Props {
   data: DuoCardProps;
-  onConnect: () => void
+  onConnect: (discord: string) => void
 }
 
 export function DuoCard({ data, onConnect }: Props) {
@@ -31,7 +31,7 @@ export function DuoCard({ data, onConnect }: Props) {
         colorValue={data.useVoiceChannel ? THEME.COLORS.SUCCESS : THEME.COLORS.ALERT} 
       />
 
-      <TouchableOpacity style={styles.button} onPress={onConnect}>
+      <TouchableOpacity style={styles.button} onPress={() => onConnect('CarlosDisc')}>
         <Text style={styles.buttonTitle}>Conectar</Text>
       </TouchableOpacity>
     </View>
